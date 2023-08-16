@@ -4,6 +4,8 @@
 [PHP源码在这里](https://github.com/k-skye/OpenVpn-Flow-Control-System)
 
 BUG未知<br>
+sudo apt-get install curl
+
 本脚本仅适用于学习与研究等个人用途,请勿用于任何违法国家法律的活动！<br>
 <br>
 一键脚本：<br>
