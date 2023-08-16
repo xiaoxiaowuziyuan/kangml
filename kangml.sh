@@ -24,7 +24,7 @@ echo
 echo "
 ==================================================================
 		Openvpn流量控制系统 | 一键搭建脚本
-                 Powered by kangml.com 2015-2021
+                 Powered by 小刀 2015-2021
 
      温馨提示：
          做最好的服务,做最好的搭建程序。
@@ -99,7 +99,7 @@ Install_Update()
 {
 clear
 cd /var/www/html/
-wget -q 下崽源/centos/kangml-update.zip
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/kangml-update.zip
 unzip -o kangml-update.zip >/dev/null 2>&1
 chmod 777 -R ./ >/dev/null 2>&1
 rm -rf kangml-update.zip >/dev/null 2>&1
@@ -108,12 +108,12 @@ echo "已经更新完毕！"
 
 Install_Fuzai()
 {
-wget -q 下崽源/kangfz.sh
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/kangfz.sh
 }
 
 Install_App()
 {
-wget -q 下崽源/kangapp.sh
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/kangapp.sh
 }
 
 Install_Auth()
@@ -386,7 +386,7 @@ wget -q 下崽源/centos/dnsmasq.conf -P /etc > /dev/null 2>&1
 chmod 0777 /etc/dnsmasq.conf > /dev/null 2>&1
 echo '#kangml自定义屏蔽host文件 ' >> /etc/kangml_host
 chmod 0777 /etc/kangml_host > /dev/null 2>&1
-echo '#广告屏蔽:列：127.0.0.1 www.kangml.com ' >> /etc/AD.conf
+echo '#广告屏蔽:列：127.0.0.1 www.uwiyDWZP3867 ' >> /etc/AD.conf
 chmod 0777 /etc/AD.conf > /dev/null 2>&1
 systemctl start dnsmasq.service > /dev/null 2>&1
 systemctl restart crond.service > /dev/null 2>&1
@@ -423,7 +423,7 @@ crontab /tmp/crontab.1200 > /dev/null 2>&1
 systemctl restart crond.service
 mkdir /etc/rate.d/
 chmod -R 0777 /etc/rate.d/ > /dev/null 2>&1
-wget -q 下崽源/centos/res.zip > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/res.zip > /dev/null 2>&1
 unzip -o res.zip > /dev/null 2>&1
 chmod -R 0777 /root > /dev/null 2>&1
 rm -rf /root/res.zip > /dev/null 2>&1
@@ -431,14 +431,14 @@ mv /root/res/kangml.service /lib/systemd/system/kangml.service > /dev/null 2>&1
 chmod -R 0777 /lib/systemd/system/kangml.service > /dev/null 2>&1
 systemctl enable kangml.service
 cd /bin > /dev/null 2>&1
-wget -q 下崽源/centos/bin.zip > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/bin.zip > /dev/null 2>&1
 cd /bin > /dev/null 2>&1
 unzip -o bin.zip > /dev/null 2>&1
 rm -rf /bin/bin.zip > /dev/null 2>&1
 chmod -R 0777 /bin > /dev/null 2>&1
 rm -rf /var/www/html > /dev/null 2>&1
 cd /var/www > /dev/null 2>&1
-wget -q 下崽源/centos/kangml_web.zip > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/kangml_web.zip > /dev/null 2>&1
 unzip -o kangml_web.zip > /dev/null 2>&1
 rm -rf kangml_web.zip > /dev/null 2>&1
 chmod 0777 -R /var/www/html > /dev/null 2>&1
@@ -460,15 +460,15 @@ echo "【6/7】制作APP（预计1-2分钟）"
 rm -rf /APP > /dev/null 2>&1
 mkdir /APP > /dev/null 2>&1
 cd /APP > /dev/null 2>&1
-wget -q 下崽源/centos/kangml.apk > /dev/null 2>&1
-wget -q 下崽源/centos/apktool.jar > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/kangml.apk > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/apktool.jar > /dev/null 2>&1
 java -jar apktool.jar d kangml.apk > /dev/null 2>&1
 rm -rf kangml.apk > /dev/null 2>&1
 sed -i 's/Kangml/'$AppName'/g' /APP/kangml/res/values/strings.xml > /dev/null 2>&1
 sed -i 's/118.195.174.185:1234/'$IP:1234'/g' /APP/kangml/res/values/strings.xml > /dev/null 2>&1
 sed -i 's/dailiid/'0'/g' /APP/kangml/res/values/strings.xml > /dev/null 2>&1
 java -jar apktool.jar b kangml > /dev/null 2>&1
-wget -q 下崽源/centos/signer.zip > /dev/null 2>&1
+wget -q https://github.com/xiaoxiaowuziyuan/kangml/signer.zip > /dev/null 2>&1
 unzip -o signer.zip > /dev/null 2>&1
 mv /APP/kangml/dist/kangml.apk /APP/kangml.apk > /dev/null 2>&1
 java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/kangml.apk /APP/kangml_sign.apk > /dev/null 2>&1
